@@ -64,6 +64,7 @@ jQuery('#frmSubmit').on('submit', function (e) {
 
             }
         });
+        
     }
     else {
         loading.innerText="Enter valid Value";
