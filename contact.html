@@ -33,10 +33,6 @@
         </div>
     </nav>
 
-
-    <div id="loading" class="loading max-width-2 m-auto">
-        <img src="images/loading.gif" alt="loading">
-    </div>
     <form method="post" id="frmSubmit" class="contact-box max-width-2 d-flex">
         <div class="contact-form d-flex">
             <div class="left-form d-flex m-auto">
@@ -59,13 +55,14 @@
                 <input class="input" type="number" name="number" id="number">
 
                 <label class="label_tag" for="number">MESSAGE</label>
-                <textarea class="input" type="textarea" rows="5" name="msg" id="msg"></textarea>
+                <textarea class="input" type="textarea" rows="5" name="msg" placeholder="Enter minimum 2 word" id="msg"></textarea>
 
                 <button  type="submit" id="btnSubmit" class="btn-submit" style="margin-top: 20px;">SEND MESSAGE</button>
 
             </div>
 
         </div>
+        <div id="loading" class="loading"></div>
     </form>
 
     <div class="footer">
