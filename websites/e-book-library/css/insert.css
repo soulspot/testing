@@ -1,0 +1,19 @@
+.login-pannel{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.login-pannel h1{
+    text-align: center;
+    margin: 20px 0px;
+}
+label{
+    text-transform: uppercase;
+}
+.login-pannel input{
+    margin: 5px 0px;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 18px;
+    background-color: #f0ecec;
+}
