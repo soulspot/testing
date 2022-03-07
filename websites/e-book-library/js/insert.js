@@ -1,5 +1,5 @@
 let user=document.getElementById("userid");
-console.log(user)
+
 let pass=document.getElementById("password");
 let btn=document.getElementById("btnSubmit");
 url="../js/admin.json"

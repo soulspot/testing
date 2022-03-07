@@ -23,7 +23,6 @@ fetch_books = async () => {
   loading.innerHTML=`<img class="m-auto" src="images/loading1.gif" alt="">`;
     let res = await fetch(url);
     let data = await res.json();
-    console.log(data)
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
 

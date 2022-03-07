@@ -1,5 +1,4 @@
 let blogs=document.getElementById("blogs");
-console.log('ok this is blog.js')
 let url="js/blog.json";
 let response;
 let data;
