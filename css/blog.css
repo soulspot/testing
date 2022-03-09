@@ -29,6 +29,12 @@
     justify-content: center;
     width: 100%;
 }
+.loading{
+    text-align: center;
+}
+.loading img{
+    width: 80px;
+}
 .blog-box{
     margin-top: 30px;
     box-sizing: border-box;
