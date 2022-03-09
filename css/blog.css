@@ -31,6 +31,7 @@
 }
 .loading{
     text-align: center;
+    min-height: 80px;
 }
 #laodingImg{
     margin: auto;

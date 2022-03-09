@@ -16,7 +16,9 @@ fetch_data= async (url)=>{
         <a class="main-url-a" href="${element.url}" target="_blank" >Read more</a>
         </div>`
     })
-    loading.style.display='none';
+    setTimeout(() => {
+        loading.style.display='none';
+    }, 1000);
     blogs.innerHTML=str;
 }
 
