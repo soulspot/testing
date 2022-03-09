@@ -1,11 +1,12 @@
 let blogs=document.getElementById("blogs");
-let loading=document.getElementById("loading");
+let loading=document.getElementById("laodingImg");
 let url="js/blog.json";
 let response;
 let data;
 let str="";
 fetch_data= async (url)=>{
-    loading.innerHTML=`<img src="images/loading3.gif" alt="">`
+
+    loading.style.display='block';
     response=await fetch(url);
     data=await response.json();
     data.forEach((element)=>{
@@ -15,8 +16,7 @@ fetch_data= async (url)=>{
         <a class="main-url-a" href="${element.url}" target="_blank" >Read more</a>
         </div>`
     })
-
-    loading.innerHTML=``;
+    loading.style.display='none';
     blogs.innerHTML=str;
 }
 
