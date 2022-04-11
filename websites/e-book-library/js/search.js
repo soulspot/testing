@@ -1,9 +1,16 @@
 let geturl=window.location.search.slice(1);
 geturl=geturl.replace(/=/g,`":"`);
 geturl=`{"`+geturl+`"}`;
+console.log(geturl);
 searchItem=JSON.parse(geturl);
+mainFind=searchItem.query.split('+').join(' ');
+mainFind=mainFind.toLowerCase();
+console.log(mainFind)
+// console.log(searchItem.query);
 let search=document.getElementById("search");
-
+let TitleMatch=false;
+let CategoryMatch=false;
+let authorMatch=false;
 
 
 
@@ -31,6 +38,37 @@ let loading=document.getElementById("loading");
 let bool=false;
 let str="";
 count=0;
+
+category_wise_search=(text1,text2)=>{
+  if (text1==text2) {
+    CategoryMatch=true;
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+titleSearch=(text1,text2)=>{
+  result=text2.includes(text1);
+  if(result){
+    TitleMatch=true;
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+authorSearch=(text1,text2)=>{
+  result=text2.includes(text1);
+  if(result){
+    authorMatch=true;
+    return true;
+  }
+  else{
+    return false;
+  }
+
+}
 fetch_books=async(bookInsert)=>{
   loading.innerHTML=`<img class="m-auto" src="images/loading1.gif" alt="">`;
 
@@ -39,7 +77,10 @@ fetch_books=async(bookInsert)=>{
     // console.log(data)
     for (let i = 1; i < data.length; i++) {
         const element = data[i];
-            if (((searchItem.query.toLowerCase())==(element.category.toLowerCase()))) {
+        eleCategory=element.category.toLowerCase();
+        eleTitle=element.bookname.toLowerCase();
+        eleAuthor=element.author.toLowerCase();
+            if (category_wise_search(mainFind,eleCategory) || titleSearch(mainFind,eleTitle) ||authorSearch(mainFind,eleAuthor)) {
                 count=count+1;
                 str+=`
                 <div class="card">
@@ -56,11 +97,17 @@ fetch_books=async(bookInsert)=>{
             `
             }
     }
-    if (count!=0) {
-        search.innerText=`${count} Book Found from ${searchItem.query} Category`;
+    if (TitleMatch) {
+        search.innerText=`${count} Book Found By, ${mainFind} Name`;
+    }
+    else if(CategoryMatch){
+      search.innerText=`${count} Book Found From, ${mainFind} Category`;
+    }
+    else if(authorMatch){
+      search.innerText=`${count} Book Found From, ${mainFind} Author`;
     }
     else{
-        search.innerText=`No Book Found From ${searchItem.query} Category`;
+        search.innerText=`No Book Found No Database`;
     }
     loading.innerHTML=``;
     bookInsert.innerHTML=str;
