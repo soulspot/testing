@@ -1,11 +1,11 @@
 let geturl=window.location.search.slice(1);
 geturl=geturl.replace(/=/g,`":"`);
 geturl=`{"`+geturl+`"}`;
-console.log(geturl);
+// console.log(geturl);
 searchItem=JSON.parse(geturl);
 mainFind=searchItem.query.split('+').join(' ');
 mainFind=mainFind.toLowerCase();
-console.log(mainFind)
+// console.log(mainFind)
 // console.log(searchItem.query);
 let search=document.getElementById("search");
 let search2=document.getElementById("search2");
@@ -85,7 +85,7 @@ more_result=(bool,more_cate,name)=>{
     fetch_more(addbook2,more_cate,name);
   }
   else{
-    console.log("by have a great thanks");
+    console.log("No more result found");
   }
 }
 fetch_more=async(bookInsert,more_cate,name)=>{
@@ -115,7 +115,8 @@ fetch_more=async(bookInsert,more_cate,name)=>{
             `
             }
     }
-    if (count!=0 && !titleSearch(name,eleTitle)) {
+    // console.log(count);
+    if (count>0) {
       search2.innerText=`${count} More Books Found From Same Category`;
     }
     else{
@@ -175,6 +176,6 @@ fetch_books=async(bookInsert)=>{
     bookInsert.innerHTML=str;
     str="";
     count=0;
-    console.log(fetchCategory,fetchAuthor);
+    // console.log(fetchCategory,fetchAuthor);
 }
 fetch_books(addbook);
