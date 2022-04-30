@@ -11,17 +11,35 @@
     <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav class="navbar font1">
-        <div class="lable"><a href="https://soulspot.github.io/home">CodeWithSoul</a>
-            <div class="navToggleLogo" id="navToggleLogo">
-                <img src="images/hamburger-menu.svg" alt="">
+    <!-- Navigation bar is here -->
+    <header class="header">
+        <div class="up">
+            <div class="left">
+               <a href="../../index.html">CodeWithSoul</a>
+            </div>
+            <div class="right">
+                <div class="up-nav noselect">
+                    <ul>
+                        <li class="up-li" ><a href="index.html">Library</a> </li>
+                        <li class="up-li" ><a href="insert/insert.html">Add Books</a> </li>
+                        <li>
+                            <form method="get" action="search.html">
+                                <input type="text" name="query" id="searchBox">
+                                <input target="_blank" id="searchBtn" type="submit" value="SEARCH">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="up-btn">
+                    <img name="menu" src="icons8-menu.svg" alt="">
+                    <img name="close" src="icons8-close.svg" alt="">
+                </div>
             </div>
         </div>
-
-        <div id="navItem" class="navItem">
+        <div class="down noselect">
             <ul>
-                <li><a href="index.html">Library</a></li>
-                <li><a href="insert/insert.html">Add books</a></li>
+                <li class="down-li" ><a href="index.html">Library</a></li>
+                <li class="down-li" ><a href="insert/insert.html">Add Books</a></li>
                 <li>
                     <form method="get" action="search.html">
                         <input type="text" name="query" id="searchBox">
@@ -30,7 +48,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </header>
 
     <h1 id="search" class="font1" >Finding Your required Book</h1>
     <div id="loading" class="loading max-width-2 m-auto d-flex"></div>

@@ -54,10 +54,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
-.active{
-    color: #ca2334;
-    font-weight: bolder;
-}
+
 .box{
     margin:20px;
     width: 300px;

@@ -1,6 +1,5 @@
-let navIco =document.getElementById('navToggleLogo');
-let navItem=document.getElementById('navItem');
-navIco.addEventListener('click',()=>{
-   
-    navItem.classList.toggle("hide");
+const btn=document.querySelector('.up-btn');
+const header=document.querySelector('.header');
+btn.addEventListener('click',()=>{
+    header.classList.toggle('active');
 })
