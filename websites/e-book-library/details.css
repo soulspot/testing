@@ -5,8 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    background-image: url("https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=785&q=80");
-    background-size: 100vw;
+    background-image: url("https://media.moddb.com/images/mods/1/20/19393/Amnesia_2012-09-18_13-39-23-30.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: sticky;
     color: white;
 }
 
