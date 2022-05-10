@@ -23,10 +23,7 @@ fetch_books = async () => {
   loading.innerHTML=`<img class="m-auto" src="images/loading1.gif" alt="">`;
     let res = await fetch(url);
     let data = await res.json();
-    for (let i = 0; i < data.length; i++) {
-        const element = data[i];
-
-    }
+    console.table(data);
     for (let i = 1; i < data.length; i++) {
         const element = data[i];
 
@@ -41,7 +38,7 @@ fetch_books = async () => {
                 <div class="category">Category: ${element.category}</div>
             </div>
         </div>
-        <div class="btn"><a target="_blank" href="${element.link}"><button class="btn-danger">DOWNLOAD</button></a></div>
+        <div class="btn"><a href="details.html?query=${element.bookid}"><button class="btn-danger">SHOW MORE</button></a></div>
       </div>
     `
     }
