@@ -12,8 +12,8 @@ fetch_data= async (url)=>{
     data.forEach((element)=>{
         str+=`<div class="blog-box">
         <span class="time">${element.time}</span>
-        <div class="blog-title"><a class="box-title-a" target="_blank" href="${element.url}">${element.title}</a></div>
-        <a class="main-url-a" href="${element.url}" target="_blank" >Read more</a>
+        <div class="blog-title"><a class="box-title-a" href="${element.url}">${element.title}</a></div>
+        <a class="main-url-a" href="${element.url}" >Read more</a>
         </div>`
     })
     setTimeout(() => {
