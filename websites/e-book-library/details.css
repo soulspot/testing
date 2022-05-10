@@ -45,6 +45,8 @@ p{
 }
 .btn{
     margin: 30px;
+    display: flex;
+    justify-content: center;
 }
 .btn input{
     padding: 10px;
