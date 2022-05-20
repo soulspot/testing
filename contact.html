@@ -1,97 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeWithSoul - Contact page</title>
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/utiles.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <title>iMovies -Contact US</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .msg{
+            height: 60px;
+        }
+        .container1{
+            width: 80%;
+            margin: auto;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-wrap: wrap;
+        }
+        .card{
+            min-height: 430px;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">iMovies</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
 
-<body>
-    <!-- Navigation bar is here -->
-    <header class="header">
-        <div class="up">
-            <div class="left">
-               <a href="index.html">CodeWithSoul</a>
-            </div>
-            <div class="right">
-                <div class="up-nav noselect">
-                    <ul>
-                        <li class="up-li" ><a href="index.html">Home</a> </li>
-                        <li class="up-li" ><a href="blog.html">Blog</a> </li>
-                        <li class="up-li" ><a href="website.html">Websites</a> </li>
-                        <li class="up-li" ><a href="contact.html">Contact us</a> </li>
-                    </ul>
-                </div>
-                <div class="up-btn">
-                    <img name="menu" src="icons8-menu.svg" alt="">
-                    <img name="close" src="icons8-close.svg" alt="">
-                </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="category.html?query=holly">Holywood</a></li>
+                            <li><a class="dropdown-item" href="category.html?query=bolly">Bollywood</a></li>
+                            <!-- <li><hr class="dropdown-divider"></li> -->
+                            <li><a class="dropdown-item" href="category.html?query=south">South Indian</a></li>
+                            <li><a class="dropdown-item" href="category.html?query=series">Web series</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active">Contact Us</a>
+                    </li>
+                </ul>
+                <form method="get" action="search.html?" class="d-flex">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
         </div>
-        <div class="down noselect">
-            <ul>
-                <li class="down-li" ><a href="index.html">Home</a></li>
-                <li class="down-li" ><a href="blog.html">Blog</a></li>
-                <li class="down-li" ><a href="website.html">Websites</a></li>
-                <li class="down-li" ><a href="contact.html">Contact us</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <form method="post" id="frmSubmit" class="contact-box max-width-2 d-flex">
-        <div class="contact-form d-flex">
-            <div class="left-form d-flex m-auto">
-                <h2 class="font1">Let's talk about everything!</h2>
-                <span><img src="images/contact.jpg" alt="img"></span>
-                <span id="secHeading">Feel free to ask us anything!</span>
-                <span id="description">Have doubt or suggestion to make? Feel free to ask anything. If you have any
-                    suggestions, please let me know. Your suggestions are highly appreciated. I appreciate your time and
-                    try hard to reply to every single message posted here! Keep dropping your priceless opinions.</span>
-            </div>
-            <div class="right-form d-flex">
-                <label class="label_tag" for="name">FULL NAME</label>
-                <input class="input" type="name" name="name" id="name">
+    </nav>
 
 
-                <label class="label_tag" for="email">EMAIL</label>
-                <input class="input" type="email" name="email" id="email">
-
-                <label class="label_tag" for="number">PHONE NUMBER</label>
-                <input class="input" type="number" name="number" id="number">
-
-                <label class="label_tag" for="number">MESSAGE</label>
-                <textarea class="input" type="textarea" rows="5" name="msg" placeholder="Enter minimum 2 word" id="msg"></textarea>
-
-                <button  type="submit" id="btnSubmit" class="btn-submit" style="margin-top: 20px;">SEND MESSAGE</button>
-
-            </div>
-
-        </div>
-        <div id="loading" class="loading"></div>
-    </form>
-
-    <div class="footer">
-        <div class="footer-img"><img src="images/logo.png" alt=""></div>
-        <div class="footer-information">
-            <Strong>E-mail : ookarmakarpallab1212@gmail.com</Strong>
-        </div>
-        <footer>
-            CodeWithSoul &copy; | all rights reserved
-            <div class="footer-logo">
-
-            </div>
-        </footer>
+    <div class="msg">
+        
     </div>
-</body>
-<script src="js/nav.js"></script>
-<script src="js/contact.js"></script>
+    <div class="container1">
+        <div class="card my-4 mx-4" style="width: 20rem;">
+            <img src="images/photo-1542831371-29b0f74f9713.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center text-primary">Developer</h5>
+              <p class="card-text"><strong class="text-primary">Developer </strong>: <strong>Pallab Karmakar</strong>, also he is the owner of code with soul youtube channel. Do follow him on youtube.</p>
+              <a href="https://www.youtube.com/channel/UCgI9UbQ4IinAZIdd0dLENEA" class="btn btn-primary">Follow on Youtube</a>
+            </div>
+        </div>
+        <div class="card my-4 mx-4" style="width: 20rem;">
+            <img src="images/photo-1628348068343-c6a848d2b6dd.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center text-primary">Maintainer</h5>
+              <p class="card-text"><strong class="text-primary">Maintainer </strong>: <strong>Mannan Hossen</strong>, is the Maintainer of our movie site also he uploads regular movie on our website. Do follow him on facebook</p>
+              <a href="https://www.facebook.com/mannan.hossen.522" class="btn btn-primary">Follow on facebook</a>
+            </div>
+        </div>
+        <div class="card my-4 mx-4" style="width: 20rem;">
+            <img src="https://source.unsplash.com/300x170/?laptop,chat" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center text-primary">WhatsApp</h5>
+              <p class="card-text"><strong class="text-primary">Information </strong>: Our website mainterner has a WhatsApp group, if any one interested to get instant notification about our movie website, then make sure to join our group</p>
+              <a href="https://chat.whatsapp.com/Fv60jkWR3bA6Cl8mUuqVA6" class="btn btn-primary">JOIN GROUP</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center text-primary">Give Your Feadback</h1>
+    <form method="post" id="frmSubmit" class="container my-4">
+
+        <div class="row my-4">
+            <div class="col">
+                <input type="text" class="form-control" name="first" placeholder="First name" aria-label="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="last" placeholder="Last name" aria-label="Last name">
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col">
+                <input type="text" class="form-control" name="topic" placeholder="Enter your topic" aria-label="topic">
+            </div>
+            <div class="col">
+                <input type="email" class="form-control" name="email" placeholder="Enter your Email" aria-label="Email address">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Your Massage</label>
+            <textarea class="form-control" name="msg" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button>
+
+    </form>
+    <footer class="container text-center my-3 mb-1">
+        <strong class="text-primary">CodeWithSoul ||</strong> Copyright © 2022 iMovies.com
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/contact.js"></script>
+  </body>
 </html>
