@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree Blog</title>
+    <link rel="stylesheet" href="blogsCss/blogUtiles.css">
+    <link rel="stylesheet" href="blogsCss/prism.css">
+    <link rel="stylesheet" href="blogsCss/blog3.css">
+    <link rel="stylesheet" href="blogsCss/comment.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content max-width-2 m-auto font1">
+        <h1>Binary Search Tree (DSA) With C language</h1>
+        <div class="ans font1">
+            <p> <strong>Defination: </strong> A binary search tree (BST) is a binary tree where each node has a Comparable key (and an associated value) and satisfies the restriction that the key in any node is larger than the keys in all nodes in that node's left subtree and smaller than the keys in all nodes in that node's right subtree.</p>
+        </div>
+        <h2>Properties:</h2>
+        <div class="properties">
+            <ol><li>Each data values in it’s left sub-tree is less then the root value.</li>
+                <li>Each data values in it’s right sub tree is greater than the root value.</li>
+                <li>Left and Right sub-trees are again Binary search Tree.</li>
+            </ol>
+        </div>
+        <h2>Example:</h2>
+        <div class="img">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/BSTSearch.png" alt="">
+        </div>
+        <div class="code-box">
+            <pre class="language-c" data-prismjs-copy="Copy">
+                <code class="language-c" data-prismjs-copy="Copy">
+    #include &#60;stdio.h&#62;
+    #include &#60;conio.h&#62;
+    #include &#60;stdlib.h&#62;
+    //include all the header file first the create a note.
+    struct node
+    {
+        int data;
+        struct node *left;
+        struct node *right;
+    };
+    struct node *root_node = NULL;
+    struct node *create_node(int value)
+    {
+        if (value != (int)NULL)
+        {
+            struct node *new_node;
+            new_node = (struct node *)malloc(sizeof(struct node));
+            new_node->data = value;
+            new_node->left = NULL;
+            new_node->right = NULL;
+            return new_node;
+        }
+        else
+        {
+            printf("\nInvalid input");
+        }
+    }
+    void insert(struct node *node, int value)
+    {
+        if (root_node == NULL)
+        {
+            root_node = create_node(value);
+        }
+        else
+        {
+            struct node *temp_node;
+            while (node != NULL)
+            {
+                temp_node = node;
+                if (value == node->data)
+                {
+                    printf("\nCan't insert, already exist");
+                    return;
+                }
+                else if (value < node->data)
+                {
+                    node = node->left;
+                }
+                else
+                {
+                    node = node->right;
+                }
+            }
+            struct node *new = create_node(value);
+            if (value < temp_node->data)
+            {
+                temp_node->left = new;
+            }
+            else
+            {
+                temp_node->right = new;
+            }
+        }
+    }
+    void pre_order(struct node *node)
+    {
+        if (node != NULL)
+        {
+            printf(" %d ", node->data);
+            pre_order(node->left);
+            pre_order(node->right);
+        }
+    }
+    void in_order(struct node *node)
+    {
+        if (node != NULL)
+        {
+            in_order(node->left);
+            printf(" %d ", node->data);
+            in_order(node->right);
+        }
+    }
+    void post_order(struct node *node)
+    {
+        if (node != NULL)
+        {
+            post_order(node->left);
+            post_order(node->right);
+            printf(" %d ", node->data);
+        }
+    }
+    void traversal()
+    {
+        printf("\n\n<<=========Traversal Menu==========>");
+        printf("\n\n1.\tPre_order traversal");
+        printf("\n\n2.\tIn_order traversal");
+        printf("\n\n3.\tPost_order traversal");
+        printf("\n\n4.\tMain Menu");
+        printf("\n\n=====>    ");
+        switch (getch())
+        {
+        case '1':
+            pre_order(root_node);
+            break;
+        case '2':
+            in_order(root_node);
+            break;
+        case '3':
+            post_order(root_node);
+            break;
+        case '4':
+            return;
+            break;
+    
+        default:
+            printf("\nInvalid input");
+        }
+    }
+    struct node *in_order_predecessor(struct node *node)
+    {
+        node = node->left;
+        while (node->right != NULL)
+        {
+            node = node->right;
+        }
+        return node;
+    }
+    struct node * delete_node(struct node *node, int value)
+    {
+        struct node *in_pre; //in_order_predecessor input
+        if (node == NULL)
+        {
+            return NULL;
+        }
+        if (node->left == NULL && node->right == NULL)
+        {
+            free(node);
+            return NULL;
+        }
+        //searching value from bst
+        if (value < node->data)
+        {
+            node->left = delete_node(node->left, value);
+        }
+        else if (value > node->data)
+        {
+            node->right = delete_node(node->right, value);
+        }
+        //deletion startegy
+        else
+        {
+            in_pre = in_order_predecessor(node);
+            node->data = in_pre->data;
+            node->left = delete_node(node->left, in_pre->data);
+        }
+        return node;
+    }
+    struct node *search(struct node *node, int value)
+    {
+        while (node != NULL)
+        {
+            if (value == node->data)
+            {
+                return node;
+            }
+            else if (value < node->data)
+            {
+                node = node->left;
+            }
+            else
+            {
+                node = node->right;
+            }
+        }
+        return NULL;
+    }
+    void menu()
+    {
+        int choice = 1, data, delete, search_item;
+        while (choice != 0)
+        {
+            printf("\n\n<<=========Main Menu===========>");
+            printf("\n0.\t Exit");
+            printf("\n1.\t Insert");
+            printf("\n2.\t Delete");
+            printf("\n3.\t Traversal");
+            printf("\n4.\t Search");
+            printf("\n5.\t Clear Screen");
+            printf("\nEnter Your choice=====>   ");
+            scanf("%d", &choice);
+            switch (choice)
+            {
+            case 0:
+                exit(0);
+                break;
+            case 1:
+                printf("\nEnter the value that you want to Insert==> ");
+                scanf("%d", &data);
+                insert(root_node, data);
+                break;
+            case 2:
+                printf("\nEnter the value that you want to Delete==> ");
+                scanf("%d",&delete);
+                delete_node(root_node, delete);
+                break;
+            case 3:
+                traversal();
+                break;
+            case 4:
+                printf("\nEnter the value that you want to Search==> ");
+                scanf("%d", &search_item);
+                struct node * search_node=search(root_node, search_item);
+                if(search_node!=NULL){
+                    printf("\n%d Found",search_node->data);
+                }
+                else{
+                    printf("\nNot Found");
+                }
+                break;
+            case 5:
+                system("cls");
+                break;
+            default:
+                printf("\nInvalid Input");
+            }
+        }
+    }
+    
+    int main()
+    {
+        system("cls");
+        menu();
+        return 0;
+    }
+
+                </code>
+            </pre>
+        </div>
+    </div>
+    <div class="max-width-2 m-auto"><hr></div>
+<div class="comment-section max-width-2 m-auto font1">
+    <form  method="post" id="frmSubmit" class="do-comment m-auto">
+        <h1>Make a comment</h1>
+        <label for="name">Name</label>
+        <input type="name" name="name" id="name">
+        <label for="comments">Comment</label>
+        <textarea name="comments" id="comments" cols="50" rows="5"></textarea>
+        <button  type="submit" id="btnSubmit" class="btn-submit" style="margin-top: 20px;">comment</button>
+    </form>
+    <h1>Comments</h1>
+    <div id="comment"></div>
+
+      
+</div>
+</body>
+    <script src="blogsJs/prism.js"></script>
+    <script src="blogsJs/comment.js"></script>
+    <script src="blogsJs/comment_submit.js"></script>
+</html>

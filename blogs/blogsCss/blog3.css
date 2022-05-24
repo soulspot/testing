@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(247, 241, 241);
+}
+.ans{
+    width: 100%;
+}
+.ans p{
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 20px;
+    text-align: justify;
+}
+.properties{
+    width: 100%;
+}
+.code-box{
+    width: 100%;
+}
+.img{
+
+    width: 80%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.img img{
+    width: 50%;
+
+}
+@media (max-width:1000px) {
+    .content{
+        width: 100%;
+        padding: 20px;
+    }
+    
+}

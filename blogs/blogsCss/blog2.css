@@ -1,0 +1,54 @@
+.steps ol li{
+    padding: 5px;
+}
+body{
+    background-color: rgb(247, 241, 241);
+}
+.discription{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: justify;
+}
+.starting{
+    width: 100%;
+    text-align: justify;
+}
+.img{
+    width: 80%;
+    margin: 20px auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.img img{
+    width: 80%;
+
+}
+.video{
+    width: 80%;
+    margin: auto;
+}
+.video iframe{
+    width: 80%;
+    min-height: 300px;
+}
+li{
+    text-align: left;
+}
+@media (max-width:1000px) {
+    .img{
+        width: 100%;
+    }
+    .img img{
+        width: 100%;
+    }
+    .video{
+        width: 100%;
+    }
+    .content{
+        width: 100%;
+    }
+    .video iframe{
+        width: 100%;
+    }
+}

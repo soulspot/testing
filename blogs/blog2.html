@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to run C on vs code</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="blogsCss/blog2.css">
+    <link rel="stylesheet" href="blogsCss/prism.css">
+    <link rel="stylesheet" href="blogsCss/blogUtiles.css">
+
+</head>
+<body>
+    <div class="content font1 max-width-2 m-auto">
+        <h1 class="t-center h1">How to run C and C++ on visual studio code by Microsoft?</h1>
+        <div class="discription">
+            <p>A visual studio code is a lightweight software application with a powerful source code editor that runs on the desktop. It is a free source code editor developed by Microsoft for Windows, Mac OS and Linux. It is a software editor that has a rich extension of various languages like C++, C+, C, Java, Python, PHP, Go, etc. and runtime language extensions such as .NET and Unity. It is easy to edit, build, syntax highlighting, snippets, code refactoring and debugging. In visual studio code, we can change the application's background theme, keyboard shortcuts set on our preferences, install an extension and add additional functionality.</p>
+        </div>
+        <h1 class="t-center h2">Prerequisites for running a C program in Visual Studio Code</h1>
+        <div class="steps">
+            <ol>
+                <li> We should have a basic knowledge of C programming.</li>
+                <li>The Visual Studio Code Editor must be installed in the system.</li>
+                <li>Download the C/C++ Extension. It is an extension provided by Microsoft that support visual studio code. It helps in IntelliSence, debugging and code browsing of the programming code in the visual studio.</li>
+                <li>Download the C/C++ compilers. There are some popular compilers are:
+                    <ol>
+                        <li>GCC on Linux</li>
+                        <li>GCC via Mingw-w64 on Windows</li>
+                        <li>Microsoft C++ compiler on windows</li>
+                        <li>Clang for XCode on MacOS</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div class="starting">
+            <p>We have already installed the Visual Studio Code in our system. The user interface of VS code look like the following:</p>
+            <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code.png" alt="vs code image"></div>
+            <h1 class="t-center">Download & Install the C/C++ Extension</h1>
+            <ol>
+                <li>We need to click on the extension button that displays a sidebar for downloading and installing the C/C++ extension in the visual studio code. In the sidebar, type C Extension.</li>
+                <div class="img">
+                    <img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code2.png" alt="img2">
+                </div>
+                <li>After that, click on the C/C++</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code3.png" alt="">
+                    <p class="t-center">In this image, click on the Install button to install the C/C++ extension.</p>
+                </div>
+                <li>After clicking the Install button, it shows the below image.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code4.png" alt="">
+                    
+                </div>
+                <p>In this image, we can see it shows the <strong>Uninstall</strong> button that means the <strong>C/C++</strong> extension has been successfully downloaded in the visual studio code.</p>
+                    <p>In this image, we can see it shows the <strong>Uninstall</strong> button that means the <strong>C/C++</strong> extension has been successfully downloaded in the visual studio code.</p>
+                <h1 class="t-center">Download and Install Compiler</h1>
+                <p>A <strong>MinGW</strong> is an advanced GCC compiler software used to compile and execute code. It is software that supports only the window operating system.</p>
+                <h1>Download the MinGW-w64 Compiler</h1>
+                <li>Go to the <a href="https://sourceforge.net/projects/mingw" target="_blank">https://sourceforge.net/projects/mingw</a> We land on the following page.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code5.png" alt=""></div>
+                <li>After that, click on the <strong>Download</strong> button, then it starts the downloading of the <strong>MinGW GCC compiler</strong>, as we can see in the below image.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code6.png" alt=""></div>
+                <li>MinGW software has been successfully downloaded into the system.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code7.png" alt=""></div>
+                <li>Now we double-click on the MinGW set up to install the compiler.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code8.png" alt=""></div>
+                <p>As we can see, it shows that it is a harmful file click on the Run button to proceed with installing the setup.</p>
+                <li>Click on the Install</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code9.png" alt=""></div>
+                <li>Set it defaults, or we can change the storage location of the setup. After that, click on the Continue</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code10.png" alt=""></div>
+                <li>After clicking the continue button, it shows step 2 of MinGW Installation Manager.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code11.png" alt=""></div>
+                <li>As we click on the <strong>Continue</strong>, it shows the below image. In the <strong>MinGW Installation Manager</strong>, we need to check the <strong>Mingw32-base package</strong> and <strong>Ming32-gcc-g++ package</strong> to run and compile the <strong>C/ C++</strong> program in the visual studio code editor.</li>
+                <li>After selecting the checkbox, click on the Installation tab (at the top left corner of the dialog box).</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code13.png" alt=""></div>
+                <p>Here we click on Apply Changes to set the package's installation in MinGW, as given below.</p>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code14.png" alt=""></div>
+                <li>After downloading the packages, it shows the installation process of the package, as shown below.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code16.png" alt=""></div>
+                <p>Here we can see all the changes have been successfully applied and then click on the Close button.</p>
+                <h1>Set the Environment Path for the MinGW Set Up</h1>
+                <p>After downloading and installing the MinGW compiler, we now set the environment path to include the C/C++ compiler directory.</p>
+                <li>Go to the installation directory of the MinGW Set Up. Here we installed the setup at the C drive, as shown below.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code17.png" alt=""></div>
+                <li>Double click on the MinGW folder. It shows the below image.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code18.png" alt=""></div>
+                <li>After that, click on the bin folder and then copy the directory path, as shown below.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code19.png" alt=""></div>
+                <p>Here is the path of the MinGW folder path: <strong>C:\MinGW\bin</strong></p>
+                <li>After copying the directory path, go to This PC -> Right Click on This PC -> Select/ Click on the <strong>Properties</strong>. It shows the below image.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code20.png" alt=""></div>
+                <li>After that, click on the <strong>Advanced system settings</strong> to display a popup box of System Properties, as shown below.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code21.png" alt=""></div>
+                <li>Click on the Environment Variables to set the directory path, as shown below.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code22.png" alt=""></div>
+                <p>First, we have to click on the <strong>System Variables Path</strong> and then click on the Edit button, as shown in the above image.</p>
+                <li>As we click on the Edit button, it shows a popup window to set a new path, as shown below.
+
+                    <p>In the above image, first, we click on the New button and then paste the <strong>C:\MinGW\bin</strong> path; after that, click the <strong>ok</strong> button.</p></li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code23.png" alt=""></div>
+                <li>Similarly, click the OK button to the Environment Variables and System Properties.</li>
+                <li>If we want to check that the MinGW has been successfully installed in the system: go to the <strong>Command</strong> Prompt or cmd, write the <strong>gcc -version</strong>, and press the <strong>Enter</strong></li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code24.png" alt=""></div>
+                <h1>Start Coding in the Visual Studio Code Editor</h1>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code26.png" alt=""></div>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code28.png" alt=""></div>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code29.png" alt=""></div>
+                <li>Don't forgot to downloaded <strong>Code Runner extension</strong>To run code</li>
+                <li>After writing the code, right-click on the program, as shown below.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code31.png" alt=""></div>
+                <li><Strong>Note: </Strong>Go to vs code settings and search code runner and toggle this option.</li>
+                <div class="img"><img src="https://static.javatpoint.com/cpages/images/how-to-run-a-c-program-in-visual-studio-code37.png" alt=""></div>
+                <div class="video"><iframe src="https://www.youtube.com/embed/VZRPMuY-HWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

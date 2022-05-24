@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Search</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/utiles.css"> 
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation bar is here -->
+    <header class="header">
+        <div class="up">
+            <div class="left">
+               <a href="../../index.html">CodeWithSoul</a>
+            </div>
+            <div class="right">
+                <div class="up-nav noselect">
+                    <ul>
+                        <li class="up-li" ><a href="index.html">Library</a> </li>
+                        <li class="up-li" ><a href="insert/insert.html">Add Books</a> </li>
+                        <li>
+                            <form method="get" action="search.html">
+                                <input type="text" name="query" id="searchBox">
+                                <input target="_blank" id="searchBtn" type="submit" value="SEARCH">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="up-btn">
+                    <img name="menu" src="icons8-menu.svg" alt="">
+                    <img name="close" src="icons8-close.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="down noselect">
+            <ul>
+                <li class="down-li" ><a href="index.html">Library</a></li>
+                <li class="down-li" ><a href="insert/insert.html">Add Books</a></li>
+                <li>
+                    <form method="get" action="search.html">
+                        <input type="text" name="query" id="searchBox">
+                        <input target="_blank" id="searchBtn" type="submit" value="SEARCH">
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <h1 id="search" class="font1" >Finding Your required Book</h1>
+    <div id="loading" class="loading max-width-2 m-auto d-flex"></div>
+
+    <div id="fetch" class="books font1 max-width-2 m-auto">
+    </div>
+    <h1 id="search2" class="font1" ></h1>
+    <div id="loading2" class="loading max-width-2 m-auto d-flex"></div>
+    <div id="fetch2" class="books font1 max-width-2 m-auto">
+    </div>
+
+
+</body>
+<script src="js/search.js"></script>
+</html>
