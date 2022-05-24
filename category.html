@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>iMovies - Heaven for movie lovers</title>
+
+</head>
+
+<body>
+    <!-- navigation bar is here. -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">iMovies</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="category.html?query=holly">Holywood</a></li>
+                            <li><a class="dropdown-item" href="category.html?query=bolly">Bollywood</a></li>
+                            <!-- <li><hr class="dropdown-divider"></li> -->
+                            <li><a class="dropdown-item" href="category.html?query=south">South Indian</a></li>
+                            <li><a class="dropdown-item" href="category.html?query=series">Web Series</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex" method="get" action="search.html?">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <h2 class="text-center my-3">Welcome to iMovies</h2>
+    <div class="main-btn">
+        <a href="category.html?query=bolly"><button type="button" class="btn btn-outline-warning my-2 mx-2"><strong>Bollywood</strong></button></a>
+        <a href="category.html?query=south"><button type="button" class="btn btn-outline-warning my-2 mx-2"><strong>South Indian</strong></button></a>
+        <a href="category.html?query=holly"><button type="button" class="btn btn-outline-warning my-2 mx-2"><strong>Hollywood</strong></button></a>
+        <a href="category.html?query=series"><button type="button" class="btn btn-outline-warning my-2 mx-2"><strong>Web Series</strong></button></a>
+
+    </div>
+    <div id="loading" class="loading text-center none">
+        <img src="images/Rolling-1s-200px.svg" alt="">
+    </div>
+    <div class="container">
+        <!-- <div class="card mx-3 my-3" style="width: 200px;">
+            <img src="https://source.unsplash.com/200x300/?'the lost city'" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Download </p>
+            </div>
+        </div> -->
+     
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="js/category.js"></script>
+</body>
+
+</html>
